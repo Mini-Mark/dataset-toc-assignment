@@ -53,9 +53,16 @@ function App() {
 			});
 	};
 
-	const handleDivClick = () => {
+	const handleDivClick_Paper = () => {
 		window.open(
 			"https://drive.google.com/file/d/1HzbURcBGOqhqkFC2_scYFXjF6qhLCZWW/view?usp=sharing",
+			"_blank"
+		);
+	};
+
+	const handleDivClick_Github = () => {
+		window.open(
+			"https://github.com/Mini-Mark/dataset-toc-assignment.git",
 			"_blank"
 		);
 	};
@@ -64,8 +71,8 @@ function App() {
 		<div className="App">
 			<Search searchFunc={toggleSearch} provinceList={provinceList} />
 			<div class="container-app">
-				<div class="github"></div>
-				<div class="paper" onClick={handleDivClick}></div>
+				<div class="github" onClick={handleDivClick_Github}></div>
+				<div class="paper" onClick={handleDivClick_Paper}></div>
 
 				<div class="board">
 					<div class="more-action">
