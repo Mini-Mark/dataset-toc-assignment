@@ -7,7 +7,7 @@ function App() {
 	const [provinceList, setProvinces] = useState([]);
 
 	async function checkDataIsFound(pv) {
-		const response = await fetch("http://127.0.0.1:8000/temples/" + pv);
+		const response = await fetch("https://toc-dataset-backend.onrender.com/temples/" + pv);
 		const data = await response.json();
 		if (data["Temples"] === "Error" || data.length === 0) {
 			return false;
