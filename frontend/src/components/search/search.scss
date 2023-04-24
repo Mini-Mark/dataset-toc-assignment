@@ -3,6 +3,14 @@
     width: 70vw;
     text-align: center;
 	color: white;
+    @media screen and (max-width: 600px) {
+        width: 90vw;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 95vw;
+    }
+    
 	.title {
         font-size: 6em;
         white-space: nowrap;
