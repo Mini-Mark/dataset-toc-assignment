@@ -7,7 +7,9 @@ function App() {
 	const [provinceList, setProvinces] = useState([]);
 
 	async function checkDataIsFound(pv) {
-		const response = await fetch("https://toc-dataset-backend.onrender.com/temples/" + pv);
+		const response = await fetch(
+			"https://toc-dataset-backend.onrender.com/temples/" + pv
+		);
 		const data = await response.json();
 		if (data["Temples"] === "Error" || data.length === 0) {
 			return false;
@@ -53,6 +55,24 @@ function App() {
 			});
 	};
 
+	const handleDownloadAllShow = () => {
+		provinceList.forEach((province) => {
+			fetch("/assets/csv/" + province.name + ".csv", {
+				headers: {
+					"Content-Type": "text/csv",
+				},
+			})
+				.then((response) => response.blob())
+				.then((blob) => {
+					const url = window.URL.createObjectURL(blob);
+					const a = document.createElement("a");
+					a.href = url;
+					a.download = province.name + ".csv";
+					a.click();
+				});
+		});
+	};
+
 	const handleDivClick_Paper = () => {
 		window.open(
 			"https://drive.google.com/file/d/1HzbURcBGOqhqkFC2_scYFXjF6qhLCZWW/view?usp=sharing",
@@ -76,7 +96,12 @@ function App() {
 
 				<div class="board">
 					<div class="more-action">
-						<div class="download-show">ดาวน์โหลดจังหวัดที่แสดง</div>
+						<div
+							class="download-show"
+							onClick={handleDownloadAllShow}
+						>
+							ดาวน์โหลดจังหวัดที่แสดง
+						</div>
 						<div
 							class="download-all"
 							onClick={handleDownloadSuggest}
