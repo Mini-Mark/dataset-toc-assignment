@@ -23,8 +23,9 @@
 		display: flex;
 		justify-content: center;
 		align-items: flex-end;
+		overflow: auto;
 
-		.github{
+		.github {
 			cursor: pointer;
 			position: absolute;
 			right: 40px;
@@ -36,16 +37,16 @@
 			width: 100px;
 			height: 100px;
 			border-radius: 50px;
-			transition-duration: .2s;
+			transition-duration: 0.2s;
 			box-shadow: 0px 0px 0px 10px #00000063;
 
-			&:hover{
+			&:hover {
 				transform: scale(1.2);
-				transition-duration: .2s;
+				transition-duration: 0.2s;
 			}
 		}
 
-		.paper{
+		.paper {
 			cursor: pointer;
 			position: absolute;
 			left: 40px;
@@ -57,49 +58,74 @@
 			width: 100px;
 			height: 100px;
 			border-radius: 50px;
-			transition-duration: .2s;
+			transition-duration: 0.2s;
 			box-shadow: 0px 0px 0px 10px #00000063;
 
-			&:hover{
+			&:hover {
 				transform: scale(1.2);
-				transition-duration: .2s;
+				transition-duration: 0.2s;
+			}
+		}
+
+		@media screen and (max-width: 1250px) {
+			& > .github,
+			& > .paper {
+				display: none;
 			}
 		}
 
 		.more-action {
 			background: white;
 			bottom: 0px;
-			left: 0px;
 			height: 80px;
-			position: absolute;
+			position: fixed;
 			padding: 20px;
+			left: 50%;
+			max-width: 1000px;
 			z-index: 10;
-			width: 100%;
+			transform: translateX(-50%);
+			width: 90vw;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			box-shadow: 0px 0px 19px 5px #00000063;
 
+			.more-link {
+				display: none;
+			}
+
+			@media screen and (max-width: 1250px) {
+				.more-link {
+					display: flex !important;
+					column-gap: 30px;
+					> * {
+						width: 50px;
+						height: 50px;
+						position: static;
+						box-shadow: none;
+					}
+				}
+			}
 			> * {
 				padding: 15px;
 				color: white;
 				cursor: pointer;
-				transition-duration: .2s;
+				transition-duration: 0.2s;
 
-				&.download-show{
+				&.download-show {
 					background: #088395;
 
-					&:hover{
-						background: #0A4D68;
-						transition-duration: .2s;
+					&:hover {
+						background: #0a4d68;
+						transition-duration: 0.2s;
 					}
 				}
-				&.download-all{
-					background: #54B435;
+				&.download-all {
+					background: #54b435;
 
-					&:hover{
+					&:hover {
 						background: #379237;
-						transition-duration: .2s;
+						transition-duration: 0.2s;
 					}
 				}
 			}
@@ -116,6 +142,7 @@
 			flex-direction: column;
 			row-gap: 15px;
 			overflow-y: auto;
+			padding-bottom: 100px;
 
 			&::-webkit-scrollbar {
 				width: 10px;

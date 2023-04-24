@@ -102,6 +102,16 @@ function App() {
 						>
 							ดาวน์โหลดจังหวัดที่แสดง
 						</div>
+						<div class="more-link">
+							<div
+								class="github"
+								onClick={handleDivClick_Github}
+							></div>
+							<div
+								class="paper"
+								onClick={handleDivClick_Paper}
+							></div>
+						</div>
 						<div
 							class="download-all"
 							onClick={handleDownloadSuggest}
