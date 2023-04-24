@@ -3,13 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 import re
 import requests
-import pandas
 
 app = FastAPI()
 
 origins = [
-    "http://localhost",
-    "http://localhost:3000",
+    "https://dataset-theory.netlify.app",
 ]
 
 app.add_middleware(
