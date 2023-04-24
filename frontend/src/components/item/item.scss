@@ -1,0 +1,77 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	.item {
+		display: flex;
+		width: 100%;
+		background: white;
+		border: 1px solid rgb(83, 83, 83);
+		border-radius: 50px;
+		justify-content: space-between;
+		padding: 15px 25px;
+		font-size: 1.3em;
+        transition-duration: 0.8s;
+		.action {
+			display: flex;
+			column-gap: 20px;
+			align-items: center;
+
+			.download {
+				cursor: pointer;
+				color: #292929;
+			}
+
+			.delete {
+				cursor: pointer;
+				color: red;
+			}
+			.last {
+				cursor: pointer;
+				border-left: 2px solid rgb(211, 211, 211);
+				padding-left: 15px;
+                transition-duration: 0.8s;
+				svg {
+                    transition-duration: 0.8s;
+					transform: rotate(0deg);
+				}
+			}
+		}
+	}
+	.more-detail {
+        opacity: 0;
+		transition-duration: 1s;
+        height: 0px;
+        overflow-y: hidden;
+        background: white;
+        width: 100%;
+        border: 1px solid rgb(83, 83, 83);
+        border-top: none;
+        border-radius: 0px 0px 50px 50px;
+        padding: 0px;
+	}
+
+	&.show {
+		.item {
+			border-radius: 25px 25px 0px 0px;
+			.last {
+				svg {
+                    transition-duration: 0.8s;
+					transform: rotate(180deg);
+				}
+			}
+		}
+		.more-detail {
+			opacity: 1;
+			background: white;
+			width: 100%;
+			border: 1px solid rgb(83, 83, 83);
+			border-top: none;
+			border-radius: 0px 0px 50px 50px;
+			padding: 20px;
+            height: 50vh;
+            overflow-y: auto;
+            transition-duration: 0.8s;
+		}
+	}
+}

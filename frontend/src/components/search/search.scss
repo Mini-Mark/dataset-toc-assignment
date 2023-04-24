@@ -1,0 +1,56 @@
+.content {
+    max-width: 700px;
+    width: 70vw;
+    text-align: center;
+	color: white;
+	.title {
+        font-size: 6em;
+        white-space: nowrap;
+        @media screen and (max-width: 500px) {
+            font-size: 5em;
+        }
+	}
+	.desc {
+        font-size: 1.5em;
+	}
+    .input{
+        display: flex;
+        width: 100%;
+        margin-top: 30px;
+        font-size: 1.5em;
+        input{
+            padding: 10px 10px 10px 20px;
+            width: 100%;
+            border: none;
+            border-radius: 25px 0px 0px 25px;
+            font-size: 0.7em;
+        }
+        .search-btn{
+            padding: 10px 20px 10px 15px;
+            font-weight: bold;
+            background: white;
+            color: black;
+            border-radius: 0px 25px 25px 0px;
+            cursor: pointer;
+            transition-duration: .2s;
+            &:hover{
+                background-color: rgb(68, 68, 68);
+                transition-duration: .2s;
+                color: white;
+            }
+        }
+    }
+    .checkbox-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        column-gap: 30px;
+        font-size: 1.2em;
+        margin-top: 15px;
+
+        input[type="checkbox"]{
+            transform: scale(1.25);
+            margin-right: 5px;
+        }
+    }
+}
